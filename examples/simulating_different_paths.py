@@ -1,5 +1,5 @@
 import sys
-sys.path.append('/Users/ludvigloite/projects/skole/prosjektoppgave/ship_simulator/')
+sys.path.append('/Users/ludvigloite/projects/skole/masteroppgave/shipSimulator') #CHANGE THIS TO YOUR PATH
 
 from models import ShipModel, ShipConfiguration, EnvironmentConfiguration, \
     MachinerySystemConfiguration, SimulationConfiguration, \
