@@ -41,11 +41,11 @@ cost_function_weights = {
     'alpha_eco': 1
 }
 
-
 simulation_locations = ["tautra_north_1", "tautra_north_2", "tautra_north_3","tautra_south_1", "tautra_south_2", "tautra_south_3", "sekken_north_1", "sekken_south_1", "sekken_south_2", "sekken_south_3", "sandoya_east_1", "sandoya_west_1"]
 
-sim_location = "tautra_north_3"
-new_data = True
+sim_location = "tautra" #LOCATION TO SIMULATE
+
+new_data = True 
 simulate_failures = True
 
 simulation_locations_used = [i for i in simulation_locations if sim_location in i]
@@ -63,6 +63,7 @@ safety_margin=50
 today = date.today()
 folder_name='examples/reports/test_'+str(today)
 svg_folder_name = 'test_'+str(today)
+
 try:
     os.mkdir(folder_name)
 except OSError:
@@ -100,18 +101,7 @@ failure_simulation_time_interval = int(meters_between_each_failure_simulation / 
 for simulation_location in simulation_locations_used:
     print("Simulating ",simulation_location," with failures lasting ",duration_of_failure_simulation_seconds," seconds")
 
-    route_txt = "examples/route_seacharts.txt"
-    conservation_areas_txt = 'examples/conservation_areas_standard.txt'
-    init_north_pos = 6955000
-    init_east_pos = 33100
-    size_map_east = 18000
-    size_map_north = 10124
-    center_map_east = 36580
-    center_map_north = 6960000
-    init_yaw_angle = 90 * np.pi / 180
-
     route_txt = 'examples/route_'+simulation_location+'.txt'
-
     simulation_area_name = simulation_location.split('_')[0]
     conservation_areas_txt = 'examples/conservation_areas_'+simulation_area_name+'.txt'
     
