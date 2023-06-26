@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- This network was created in GeNIe Academic, which can be used for academic teaching and research purposes only -->
+<smile version="1.0" id="Network1" numsamples="10000" discsamples="10000">
+	<nodes>
+		<decision id="Current_Evaluation">
+			<state id="Harsh" />
+			<state id="Moderate" />
+			<state id="Weak" />
+		</decision>
+		<decision id="Wind_Evaluation">
+			<state id="Harsh" />
+			<state id="Moderate" />
+			<state id="Weak" />
+		</decision>
+		<cpt id="Environment_Evaluation">
+			<state id="Harsh" />
+			<state id="Moderate" />
+			<state id="Mild" />
+			<parents>Current_Evaluation Wind_Evaluation</parents>
+			<probabilities>1 0 0 0.5 0.5 0 0.15 0.7 0.15 0.5 0.5 0 0 1 0 0 0.5 0.5 0.15 0.7 0.15 0 0.5 0.5 0 0 1</probabilities>
+		</cpt>
+		<decision id="Flag_of_Registery">
+			<state id="Norway" />
+			<state id="Denmark" />
+		</decision>
+		<decision id="Vessel_Age">
+			<state id="age_0_to_5" />
+			<state id="age_5_to_10" />
+			<state id="age_10_to_15" />
+		</decision>
+		<decision id="Vessel_Type">
+			<state id="Passenger" />
+			<state id="General_cargo" />
+		</decision>
+		<cpt id="Defiencies_noted_under_PSC">
+			<state id="Always" />
+			<state id="Sometimes" />
+			<state id="Never" />
+			<parents>Flag_of_Registery Vessel_Age Vessel_Type</parents>
+			<probabilities>0.06 0.65 0.2899999999999999 0.08 0.52 0.4 0.1 0.7 0.2000000000000001 0.12 0.57 0.3100000000000001 0.15 0.7 0.15 0.17 0.57 0.26 0.03 0.6 0.37 0.05 0.47 0.48 0.05 0.65 0.2999999999999999 0.06 0.52 0.4199999999999999 0.08 0.65 0.27 0.1 0.52 0.38</probabilities>
+		</cpt>
+		<cpt id="Failures">
+			<state id="FM1" />
+			<state id="FM2" />
+			<state id="FM3" />
+			<state id="FM4" />
+			<state id="False" />
+			<parents>Environment_Evaluation Defiencies_noted_under_PSC</parents>
+			<probabilities>0.1 0.15 0.2 0.2 0.35 0.06 0.11 0.16 0.16 0.5099999999999999 0.02 0.07000000000000001 0.12 0.12 0.6699999999999999 0.09 0.14 0.19 0.19 0.3900000000000001 0.05 0.1 0.15 0.15 0.5499999999999999 0.02 0.07000000000000001 0.12 0.12 0.6699999999999999 0.08 0.13 0.18 0.18 0.43 0.04 0.09 0.14 0.14 0.59 0.01 0.06 0.11 0.11 0.71</probabilities>
+		</cpt>
+	</nodes>
+	<extensions>
+		<genie version="1.0" app="GeNIe 4.0.2221.0 ACADEMIC" name="Network1">
+			<node id="Environment_Evaluation">
+				<name>Environment Evaluation</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>258 380 348 438</position>
+				<barchart active="true" width="128" height="72" />
+			</node>
+			<node id="Defiencies_noted_under_PSC">
+				<name>Defiencies noted under PSC</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>679 382 785 450</position>
+				<barchart active="true" width="128" height="72" />
+			</node>
+			<node id="Current_Evaluation">
+				<name>Current Evaluation</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>130 517 230 543</position>
+				<barchart active="true" width="128" height="72" />
+			</node>
+			<node id="Wind_Evaluation">
+				<name>Wind Evaluation</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>324 529 412 555</position>
+				<barchart active="true" width="128" height="72" />
+			</node>
+			<node id="Flag_of_Registery">
+				<name>Flag of Registery</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>579 565 673 591</position>
+				<barchart active="true" width="141" height="76" />
+			</node>
+			<node id="Vessel_Age">
+				<name>Vessel Age</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>774 573 843 599</position>
+				<barchart active="true" width="128" height="72" />
+			</node>
+			<node id="Vessel_Type">
+				<name>Vessel Type</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>977 563 1050 589</position>
+				<barchart active="true" width="128" height="64" />
+			</node>
+			<node id="Failures">
+				<name>Failures</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>509 212 549 244</position>
+				<barchart active="true" width="128" height="108" />
+			</node>
+		</genie>
+	</extensions>
+</smile>

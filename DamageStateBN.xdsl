@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- This network was created in GeNIe Academic, which can be used for academic teaching and research purposes only -->
+<smile version="1.0" id="Network1" numsamples="10000" discsamples="10000">
+	<nodes>
+		<decision id="Weather">
+			<state id="Good" />
+			<state id="Normal" />
+			<state id="Poor" />
+		</decision>
+		<decision id="Speed">
+			<state id="Over_15_knots" />
+			<state id="Between_5_15_knots" />
+			<state id="Under_5_knots" />
+		</decision>
+		<decision id="Ground_material">
+			<state id="Sand_or_mud" />
+			<state id="Rocks" />
+		</decision>
+		<cpt id="Damage_State">
+			<state id="State1" />
+			<state id="State2" />
+			<state id="State3" />
+			<state id="State4" />
+			<state id="State5" />
+			<state id="State6" />
+			<parents>Weather Speed Ground_material</parents>
+			<probabilities>0.6 0.2 0.1 0.03 0.02 0.05 0.3 0.3 0.2 0.05 0.02 0.13 0.7 0.15 0.08 0.03000000000000005 0.01 0.03 0.35 0.3 0.21 0.03 0.01 0.1 0.8 0.1 0.05 0.02 0.01 0.02 0.4 0.35 0.15 0.02 0.01 0.07000000000000001 0.55 0.2 0.1 0.03 0.02 0.09999999999999995 0.35 0.3 0.2 0.05 0.02 0.08000000000000002 0.65 0.15 0.08 0.03000000000000005 0.01 0.07999999999999993 0.32 0.3 0.21 0.03 0.01 0.1299999999999999 0.77 0.1 0.05 0.02 0.01 0.04999999999999997 0.37 0.35 0.15 0.02 0.01 0.1 0.5 0.2 0.1 0.06 0.03 0.11 0.3 0.25 0.15 0.09 0.03 0.1799999999999999 0.6 0.15 0.08 0.05 0.03 0.08999999999999998 0.29 0.3 0.21 0.03 0.01 0.16 0.72 0.1 0.05 0.02 0.03 0.08 0.35 0.35 0.15 0.02 0.01 0.1200000000000001</probabilities>
+		</cpt>
+	</nodes>
+	<extensions>
+		<genie version="1.0" app="GeNIe 4.0.2221.0 ACADEMIC" name="Network1">
+			<node id="Damage_State">
+				<name>Damage State</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>514 258 604 314</position>
+				<barchart active="true" width="128" height="126" />
+			</node>
+			<node id="Weather">
+				<name>Weather</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>294 466 347 492</position>
+				<barchart active="true" width="128" height="72" />
+			</node>
+			<node id="Speed">
+				<name>Speed</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>527 466 570 492</position>
+				<barchart active="true" width="275" height="72" />
+			</node>
+			<node id="Ground_material">
+				<name>Ground Material</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>766 464 854 490</position>
+				<barchart active="true" width="177" height="75" />
+			</node>
+		</genie>
+	</extensions>
+</smile>

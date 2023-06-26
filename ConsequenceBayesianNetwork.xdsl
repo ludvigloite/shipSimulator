@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- This network was created in GeNIe Academic, which can be used for academic teaching and research purposes only -->
+<smile version="1.0" id="Network1" numsamples="10000" discsamples="10000">
+	<nodes>
+		<decision id="Fragile_environment">
+			<state id="Very_fragile" />
+			<state id="Fragile" />
+			<state id="Not_fragile" />
+		</decision>
+		<utility id="Fragile_Area">
+			<parents>Fragile_environment</parents>
+			<utilities>1 0.5 0</utilities>
+		</utility>
+		<decision id="Weather">
+			<state id="Good" />
+			<state id="Normal" />
+			<state id="Poor" />
+		</decision>
+		<utility id="Weather_3">
+			<parents>Weather</parents>
+			<utilities>0.2 0.5 0.8</utilities>
+		</utility>
+		<decision id="Speed">
+			<state id="Over_20_m_per_s" />
+			<state id="Between_10_20_m_pr_s" />
+			<state id="Under_10_m_per_s" />
+		</decision>
+		<utility id="Speed_3">
+			<parents>Speed</parents>
+			<utilities>1 0.5 0.2</utilities>
+		</utility>
+		<decision id="Ground_material">
+			<state id="Sand_or_mud" />
+			<state id="Rocks" />
+			<state id="Touch_and_go" />
+		</decision>
+		<utility id="Ground_Material_3">
+			<parents>Ground_material</parents>
+			<utilities>0.3 1 0.3</utilities>
+		</utility>
+		<mau id="Consequence_on_ship">
+			<parents>Weather_3 Speed_3 Ground_Material_3</parents>
+			<weights>1 1 1</weights>
+		</mau>
+		<decision id="Distance_to_rescue">
+			<state id="More_150m" />
+			<state id="Between_50_150m" />
+			<state id="Less_50m" />
+		</decision>
+		<utility id="Rescue_difficulty">
+			<parents>Distance_to_rescue</parents>
+			<utilities>1 0.5 0.2</utilities>
+		</utility>
+		<decision id="Type_of_ship">
+			<state id="Passenger" />
+			<state id="Oil_Tanker" />
+			<state id="Cargo" />
+		</decision>
+		<utility id="Consequence_type_of_ship_people">
+			<parents>Type_of_ship</parents>
+			<utilities>1 0.1 0.1</utilities>
+		</utility>
+		<mau id="Consequence_on_People">
+			<parents>Rescue_difficulty Consequence_on_ship Consequence_type_of_ship_people</parents>
+			<weights>0.2 0.4 0.5</weights>
+		</mau>
+		<utility id="Consequence_type_of_ship_environment">
+			<parents>Type_of_ship</parents>
+			<utilities>0.01 1 0.1</utilities>
+		</utility>
+		<mau id="Consequence_on_environment">
+			<parents>Fragile_Area Consequence_type_of_ship_environment Consequence_on_ship</parents>
+			<weights>10 10 1</weights>
+		</mau>
+		<mau id="Total_consequence">
+			<parents>Consequence_on_environment Consequence_on_ship Consequence_on_People</parents>
+			<weights>10 1 100</weights>
+		</mau>
+	</nodes>
+	<extensions>
+		<genie version="1.0" app="GeNIe 4.0.2423.0 ACADEMIC" name="Network1">
+			<node id="Fragile_Area">
+				<name>Fragile Area</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>52 286 123 312</position>
+				<barchart active="true" width="128" height="64" />
+			</node>
+			<node id="Weather_3">
+				<name>Weather</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>304 340 397 366</position>
+				<barchart active="true" width="128" height="64" />
+			</node>
+			<node id="Speed_3">
+				<name>Speed</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>434 342 525 368</position>
+				<barchart active="true" width="128" height="64" />
+			</node>
+			<node id="Ground_Material_3">
+				<name>Ground Material</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>549 343 668 369</position>
+				<barchart active="true" width="128" height="64" />
+			</node>
+			<node id="Consequence_on_ship">
+				<name>Consequence on ship</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>382 180 472 236</position>
+				<barchart active="true" width="128" height="64" />
+			</node>
+			<node id="Consequence_on_People">
+				<name>Consequence on People</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>589 173 679 229</position>
+				<barchart active="true" />
+			</node>
+			<node id="Consequence_on_environment">
+				<name>Consequence on environment</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>192 174 297 239</position>
+				<barchart active="true" width="128" height="64" />
+			</node>
+			<node id="Consequence_type_of_ship_environment">
+				<name>Consequence type of ship environment</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>150 283 291 315</position>
+				<barchart active="true" width="128" height="64" />
+			</node>
+			<node id="Rescue_difficulty">
+				<name>Rescue difficulty</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>851 300 976 326</position>
+				<barchart active="true" width="128" height="64" />
+			</node>
+			<node id="Total_consequence">
+				<name>Total consequence</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>378 69 481 133</position>
+				<barchart active="true" width="128" height="64" />
+			</node>
+			<node id="Fragile_environment">
+				<name>Fragile_environment</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>59 458 168 484</position>
+				<barchart active="true" width="128" height="72" />
+			</node>
+			<node id="Type_of_ship">
+				<name>Type_of_ship</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>204 457 282 483</position>
+				<barchart active="true" width="128" height="72" />
+			</node>
+			<node id="Weather">
+				<name>Weather</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>372 457 425 483</position>
+				<barchart active="true" width="128" height="72" />
+			</node>
+			<node id="Distance_to_rescue">
+				<name>Distance to rescue</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>872 462 974 488</position>
+				<barchart active="true" width="128" height="72" />
+			</node>
+			<node id="Speed">
+				<name>Speed</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>507 458 550 484</position>
+				<barchart active="true" width="128" height="72" />
+			</node>
+			<node id="Ground_material">
+				<name>Ground Material</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>624 458 712 484</position>
+				<barchart active="true" width="128" height="72" />
+			</node>
+			<node id="Consequence_type_of_ship_people">
+				<name>Consequence_type_of_ship_people</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>716 294 848 335</position>
+				<barchart active="true" width="128" height="64" />
+			</node>
+		</genie>
+	</extensions>
+</smile>

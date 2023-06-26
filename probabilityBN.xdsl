@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- This network was created in GeNIe Academic, which can be used for academic teaching and research purposes only -->
+<smile version="1.0" id="Network1" numsamples="10000" discsamples="10000">
+	<nodes>
+		<decision id="Current_Evaluation">
+			<state id="Harsh" />
+			<state id="Moderate" />
+			<state id="Weak" />
+		</decision>
+		<decision id="Wind_Evaluation">
+			<state id="Harsh" />
+			<state id="Moderate" />
+			<state id="Weak" />
+		</decision>
+		<cpt id="Environment_Evaluation">
+			<state id="Harsh" />
+			<state id="Moderate" />
+			<state id="Mild" />
+			<parents>Current_Evaluation Wind_Evaluation</parents>
+			<probabilities>1 0 0 0.5 0.5 0 0.15 0.7 0.15 0.5 0.5 0 0 1 0 0 0.5 0.5 0.15 0.7 0.15 0 0.5 0.5 0 0 1</probabilities>
+		</cpt>
+		<decision id="Flag_of_Registery">
+			<state id="Norway" />
+			<state id="Denmark" />
+		</decision>
+		<decision id="Vessel_Age">
+			<state id="age_0_to_10" />
+			<state id="age_10_to_20" />
+			<state id="older_than_20" />
+		</decision>
+		<decision id="Vessel_Type">
+			<state id="Passenger" />
+			<state id="Oil_Tanker" />
+		</decision>
+		<cpt id="Defiencies_noted_under_PSC">
+			<state id="Always" />
+			<state id="Sometimes" />
+			<state id="Never" />
+			<parents>Flag_of_Registery Vessel_Age Vessel_Type</parents>
+			<probabilities>0.06 0.65 0.2899999999999999 0.08 0.52 0.4 0.1 0.7 0.2000000000000001 0.12 0.57 0.3100000000000001 0.15 0.7 0.15 0.17 0.57 0.26 0.03 0.6 0.37 0.05 0.47 0.48 0.05 0.65 0.2999999999999999 0.06 0.52 0.4199999999999999 0.08 0.65 0.27 0.1 0.52 0.38</probabilities>
+		</cpt>
+		<utility id="Blackout_utility_metric">
+			<parents>Environment_Evaluation Defiencies_noted_under_PSC</parents>
+			<utilities>1.6 1.3 1 1.3 1 0.7 1 0.7 0.4</utilities>
+		</utility>
+	</nodes>
+	<extensions>
+		<genie version="1.0" app="GeNIe 4.0.2221.0 ACADEMIC" name="Network1">
+			<node id="Environment_Evaluation">
+				<name>Environment Evaluation</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>276 371 366 429</position>
+				<barchart active="true" width="177" height="103" />
+			</node>
+			<node id="Defiencies_noted_under_PSC">
+				<name>Defiencies noted under PSC</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>711 364 817 432</position>
+				<barchart active="true" width="193" height="108" />
+			</node>
+			<node id="Current_Evaluation">
+				<name>Current Evaluation</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>134 555 234 581</position>
+				<barchart active="true" width="128" height="72" />
+			</node>
+			<node id="Wind_Evaluation">
+				<name>Wind Evaluation</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>347 558 435 584</position>
+				<barchart active="true" width="128" height="72" />
+			</node>
+			<node id="Flag_of_Registery">
+				<name>Flag of Registery</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>579 553 673 579</position>
+				<barchart active="true" width="141" height="76" />
+			</node>
+			<node id="Vessel_Age">
+				<name>Vessel Age</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>783 551 852 577</position>
+				<barchart active="true" width="173" height="79" />
+			</node>
+			<node id="Vessel_Type">
+				<name>Vessel Type</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>990 549 1063 575</position>
+				<barchart active="true" width="166" height="79" />
+			</node>
+			<node id="Blackout_utility_metric">
+				<name>Blackout utility metric</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>522 156 602 206</position>
+				<barchart active="true" width="191" height="64" />
+			</node>
+		</genie>
+	</extensions>
+</smile>
